@@ -1,10 +1,12 @@
+
+
 foreach ($item in $items) {
-  if ($item.name -ne 'Aged Brie' -and $item.name -ne 'Backstage passes to a TAFKAL80ETC concert') {
-    if ($item.quality -gt 0) {
-      if ($item.name -ne 'Sulfuras, Hand of Ragnaros') {
-        $item.quality = $item.quality - 1
-      }
-    }
+  if ($item.name -ne 'Aged Brie'
+    -and $item.name -ne 'Backstage passes to a TAFKAL80ETC concert'
+    -and $item.name -ne 'Sulfuras, Hand of Ragnaros'
+    -and $item.quality -gt 0
+  ) {
+    $item.quality = $item.quality - 1
   } else {
     if ($item.quality -lt 50) {
       $item.quality = $item.quality + 1
